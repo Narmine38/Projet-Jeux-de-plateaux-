@@ -1,1 +1,3 @@
-# Projet-Jeux-de-plateaux-
+# Projet-Jeux-de-plateaux
+
+- [ ] Iteration 1 – Afficher le plateau de jeu 
