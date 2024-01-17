@@ -1,7 +1,4 @@
-/**
- * The Player class represents a player in a game. Each player has a representation
- * that can be either "| X " or "| O ".
- */
+
 public class Player {
 
     private final String representation;
