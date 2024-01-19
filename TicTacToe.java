@@ -1,9 +1,8 @@
 /**
- * La classe TicTacToe est le point d'entrée pour démarrer une partie de jeu.
+ * La classe TicTacToe est le point d'entrée du jeu.
  * Elle initialise le gestionnaire de jeu et commence le jeu.
  */
 public class TicTacToe {
-
     /**
      * Un gestionnaire de jeu pour abstraire la logique du jeu.
      */
@@ -16,12 +15,14 @@ public class TicTacToe {
      */
     public TicTacToe(int size) {
         PlayerManager playerManager = new PlayerManager(); // Géré les tour des joueurs
-        BoardManager boardManager = new BoardManager(size); // Géré le plateau de jeu
-        gameManager = new GameManager(boardManager, playerManager); // Initialise le gestionnaire de jeu
+        BoardManager boardManager = new BoardManager(); // Géré le plateau de jeu
+        View view = new View(boardManager, playerManager);
+        playerManager.choiceGameType();
+        gameManager = new GameManager(boardManager, playerManager,view); // Initialise le gestionnaire de jeu
     }
 
     /**
-     * Démarrer le jeu.
+     * Commencer le jeu.
      */
     public void playGame() {
         gameManager.play();
