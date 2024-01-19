@@ -8,16 +8,16 @@ import java.util.Scanner;
 public class UserInput {
 
     // Délégation de la lecture de l'entrée à un objet Scanner
-    private final Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     // Un InputValidator pour valider les entrées
-    private final InputValidator inputValidator = new InputValidator();
+    private static final InputValidator inputValidator = new InputValidator();
 
     /**
      * Récupère une entrée utilisateur validée à l'aide de InputValidator.
      * @return La saisie validée
      */
-    public String getValidatedInput() {
+    public static String getValidatedInput() {
 
         // Lit l'entrée de l'utilisateur
         String input = scanner.nextLine();
@@ -25,7 +25,7 @@ public class UserInput {
         // Boucle tant que l'entrée n'est pas valide
         while (!inputValidator.isValid(input)) {
             // Notifie l'utilisateur que l'entrée est invalide
-            System.out.println("Entrée invalide. Veuillez saisir une valeur correcte.");
+            View.noValideTypeGame();
             // Lit à nouveau l'entrée de l'utilisateur
             input = scanner.nextLine();
         }
