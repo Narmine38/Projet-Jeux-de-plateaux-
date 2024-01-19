@@ -1,10 +1,11 @@
 /**
  * La classe Player représente un joueur dans un jeu.
  */
-public class Player {
+public abstract class Player {
 
     // la représentation du joueur sur le plan de jeu
     private final String representation;
+
 
     /**
      * Constructeur du joueur qui initialise sa représentation.
@@ -28,4 +29,6 @@ public class Player {
     public String getRepresentation() {
         return this.representation;
     }
+
+
 }
