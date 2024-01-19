@@ -12,5 +12,7 @@ public class Main {
         TicTacToe ticTacToe = new TicTacToe(3);
         // Commence le jeu
         ticTacToe.playGame();
+//        int[][] Morpion = GeneratedSolved.generateWinningCombinations(3);
+//        GeneratedSolved.DisplayCombo(Morpion);
     }
 }
