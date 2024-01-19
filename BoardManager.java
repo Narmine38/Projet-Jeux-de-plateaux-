@@ -9,28 +9,13 @@ public class BoardManager {
     /**
      * Constructeur de BoardManager qui initialise le plateau de jeu avec la taille donnée.
      *
-     * @param size la taille du plateau de jeu
      */
-    public BoardManager(int size) {
-        this.SIZE = size;
+    public BoardManager() {
+        this.SIZE = 3;
         this.board = new Cell[SIZE * SIZE];
         for (int i = 0; i < SIZE * SIZE; i++) {
             this.board[i] = new Cell();
         }
-    }
-
-    /**
-     * Cette méthode affiche le plateau de jeu.
-     */
-    public void displayBoard() {
-        for (int i = 0; i < SIZE; i++) {
-            System.out.println("- - - - - - -");
-            for (int j = 0; j < SIZE; j++) {
-                System.out.print(board[i * SIZE + j].getRepresentation());
-            }
-            System.out.println("|");
-        }
-        System.out.println("- - - - - - -");
     }
 
     /**
@@ -73,16 +58,4 @@ public class BoardManager {
         return SIZE;
     }
 
-    // Le morpion est généralement joué sur un plateau 3x3,
-    // vous allez probablement mapper ceci à une seule dimension en stockant les cellules consécutivement,
-    // de gauche à droite et de haut en bas, de la manière suivante :
-    //0 1 2
-    //3 4 5
-    //6 7 8
-    //Vous pouvez calculer la ligne et la colonne correspondant à une position dans le tableau board à l'aide
-    // des opérations de division et de reste (modulus) :
-    //row = index / 3 (division entière)
-    //col = index % 3 (reste)
-    //Avec cela, vous pouvez convertir vos méthodes pour travailler avec un tableau à une dimension.
-    // Par exemple, pour vérifier une victoire sur une ligne spécifique :
 }
